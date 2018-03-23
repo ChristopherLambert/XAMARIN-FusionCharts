@@ -1,0 +1,107 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div data-role="page" data-theme="b">
+        <form>
+
+            <div data-role="content">
+
+                <input id="btn1" type="button" name="chart" value="ChartArea" onclick="getChart('area2d')" style="width:80px;height:20px" ; />
+                <input id="btn2" type="button" name="chart" value="ChartBarra" onclick="getChart('column2d')" style="width:80px;height:20px" ; />
+                <input id="btn3" type="button" name="chart" value="ChartPizza" onclick="getChart('pie2d')" style="width:80px;height:20px" ; />
+
+                <div id="chartRender"></div>
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script src="Fusion/jquery.min.js" type="text/javascript" async></script>
+<script src="Fusion/fusioncharts.js" type="text/javascript" async></script>
+<script src="Fusion/fusioncharts.charts.js" type="text/javascript" async></script>
+
+<script>
+
+    function getChart(alias) {
+
+        $("#btn").hide();
+
+        var salesChart = new FusionCharts({
+            type: alias,
+            renderAt: 'chartRender',
+            width: window.innerWidth - 25 ,
+            height: window.innerHeight - 45,
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "FusionCharts App",
+                    "xAxisName": "Tempo",
+                    "yAxisName": "Tensão",
+                    "numberPrefix": "V",
+                    "theme": "fint",
+                    //Setting gradient fill to true
+                    "usePlotGradientColor": "1",
+                    //Setting the gradient formation color
+                    "plotGradientColor": "#1aaf5d"
+                },
+                "data": [
+                    {
+                        "label": "T0",
+                        "value": 10
+                    },
+                    {
+                        "label": "T1",
+                        "value": 5
+                    },
+                    {
+                        "label": "T2",
+                        "value": 20
+                    },
+                    {
+                        "label": "T3",
+                        "value": 10
+                    },
+                    {
+                        "label": "T4",
+                        "value": 2
+                    },
+                    {
+                        "label": "T5",
+                        "value": 0
+                    },
+                    {
+                        "label": "T0",
+                        "value": 10
+                    },
+                    {
+                        "label": "T1",
+                        "value": 5
+                    },
+                    {
+                        "label": "T2",
+                        "value": 20
+                    },
+                    {
+                        "label": "T3",
+                        "value": 10
+                    },
+                    {
+                        "label": "T4",
+                        "value": 2
+                    },
+                    {
+                        "label": "T5",
+                        "value": 0
+                    }
+                ]
+            }
+        }).render();
+    }
+   
+</script>
