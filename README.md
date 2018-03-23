@@ -12,3 +12,5 @@ Biblioteca JavaScript(js) com varios graficos diferentes, os graficos são exibi
 3º Em uma ContentPage coloque um WebView e passe como source o file://android_assets/Home.html
 
 4º No home.html adicione o cofigo html para chamar m chart como no exemplo do git.
+
+![alt text](https://github.com/ChristopherLambert/XAMARIN-FusionCharts/blob/master/Fusion/Imagens/Print.png)
